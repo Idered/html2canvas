@@ -47,7 +47,7 @@ export class FontMetrics {
         span.appendChild(this._document.createTextNode(SAMPLE_TEXT));
         container.appendChild(span);
         container.appendChild(img);
-        const baseline = img.offsetTop - span.offsetTop + 2;
+        const baseline = span.offsetHeight - 3;
 
         container.removeChild(span);
         container.appendChild(this._document.createTextNode(SAMPLE_TEXT));
@@ -56,7 +56,6 @@ export class FontMetrics {
         img.style.verticalAlign = 'super';
 
         const middle = img.offsetTop - container.offsetTop + 2;
-
         body.removeChild(container);
 
         return {baseline, middle};
